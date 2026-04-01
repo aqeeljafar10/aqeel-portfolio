@@ -1,0 +1,41 @@
+[
+  {
+    "timestamp": 1775027417366,
+    "nodes": 3,
+    "edges": 1,
+    "pageRankSum": 0.9999999999999998,
+    "confidences": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "accessCounts": [
+      0,
+      0,
+      0
+    ],
+    "topPatterns": [
+      {
+        "id": "mem-MEMORY-project-settings",
+        "summary": "Project Settings",
+        "confidence": 0.5,
+        "pageRank": 0.48051944112467226,
+        "accessCount": 0
+      },
+      {
+        "id": "mem-MEMORY-user-workflow-preferences",
+        "summary": "User Workflow Preferences",
+        "confidence": 0.5,
+        "pageRank": 0.25974027943766376,
+        "accessCount": 0
+      },
+      {
+        "id": "insight-1775027417364-gglq",
+        "summary": "Frequently edited: unknown (25x)",
+        "confidence": 0.5,
+        "pageRank": 0.25974027943766376,
+        "accessCount": 0
+      }
+    ]
+  }
+]

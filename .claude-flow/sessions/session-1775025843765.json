@@ -1,0 +1,14 @@
+{
+  "id": "session-1775025843765",
+  "startedAt": "2026-04-01T06:44:03.765Z",
+  "cwd": "/Users/aqeeljafar/claude-skills/.claude/worktrees/kind-rosalind/portfolio",
+  "context": {},
+  "metrics": {
+    "edits": 3,
+    "commands": 0,
+    "tasks": 0,
+    "errors": 0
+  },
+  "endedAt": "2026-04-01T07:10:17.367Z",
+  "duration": 1573608
+}

@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "updatedAt": 1775027417365,
+  "nodeCount": 3,
+  "nodes": {
+    "mem-MEMORY-user-workflow-preferences": {
+      "id": "mem-MEMORY-user-workflow-preferences",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1775025843776
+    },
+    "mem-MEMORY-project-settings": {
+      "id": "mem-MEMORY-project-settings",
+      "category": "core",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1775025843776
+    },
+    "insight-1775027417364-gglq": {
+      "id": "insight-1775027417364-gglq",
+      "category": "insights",
+      "confidence": 0.5,
+      "accessCount": 0,
+      "createdAt": 1775027417364
+    }
+  },
+  "edges": [
+    {
+      "sourceId": "mem-MEMORY-user-workflow-preferences",
+      "targetId": "mem-MEMORY-project-settings",
+      "type": "temporal",
+      "weight": 0.5
+    }
+  ],
+  "pageRanks": {
+    "mem-MEMORY-user-workflow-preferences": 0.25974027943766376,
+    "mem-MEMORY-project-settings": 0.48051944112467226,
+    "insight-1775027417364-gglq": 0.25974027943766376
+  }
+}
