@@ -50,11 +50,13 @@ export default function Navigation() {
         WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
       }}
     >
-      {/* Monogram */}
+      {/* Monogram — only visible after scroll */}
       <button
         onClick={() => scrollTo('top')}
         aria-label="Back to top"
-        className="font-serif text-base text-fg tracking-widest hover:text-accent transition-colors duration-200"
+        className={`font-serif text-base text-fg tracking-widest hover:text-accent transition-all duration-500 ${
+          scrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
       >
         AJ
       </button>
