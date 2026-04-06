@@ -13,7 +13,7 @@ const config: Config = {
         mono: ['var(--font-jetbrains)', 'Menlo', 'monospace'],
       },
       colors: {
-        bg: '#000000',
+        bg: '#080808',
         fg: '#FFFFFF',
         muted: '#6B6B6B',
         subtle: '#1A1A1A',

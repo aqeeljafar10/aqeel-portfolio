@@ -69,6 +69,7 @@ export default function Thesis() {
       ref={sectionRef}
       id="thesis"
       className="section-pad px-6 max-w-5xl mx-auto"
+      style={{ background: 'radial-gradient(ellipse 80% 60% at 100% 50%, rgba(200,169,110,0.03) 0%, transparent 70%)' }}
       aria-label="Core Thesis"
     >
       {/* Tag */}
