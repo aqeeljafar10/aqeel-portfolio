@@ -27,7 +27,7 @@ export default function Marquee() {
             <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted">
               {item}
             </span>
-            <span className="text-border text-xs">✦</span>
+            <span className="text-accent text-xs">✦</span>
           </span>
         ))}
       </div>

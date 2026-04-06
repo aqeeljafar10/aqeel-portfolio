@@ -7,6 +7,7 @@ import gsap from 'gsap'
 const NAME_WORDS = ['AQEEL', 'JAFAR']
 const ROLES = ['Physician', 'AI Pioneer', 'Venture Architect', 'Mentor']
 const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+const BADGES = ['Advisory', 'Investment', 'Speaking', 'Collaboration']
 
 function scrambleText(el: HTMLElement, finalText: string, duration = 700) {
   const total = Math.floor(duration / 30)
@@ -43,11 +44,12 @@ export default function Hero() {
       const divider = container.querySelector('.hero-divider')
       const roles = container.querySelectorAll('.hero-role')
       const thesis = container.querySelector('.hero-thesis')
+      const badges = container.querySelectorAll('.hero-badge')
       const scrollCue = scrollCueRef.current
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
       if (reduced) {
-        gsap.set([drEl, ...Array.from(nameWords), divider, ...Array.from(roles), thesis, scrollCue], {
+        gsap.set([drEl, ...Array.from(nameWords), divider, ...Array.from(roles), thesis, ...Array.from(badges), scrollCue], {
           opacity: 1, y: 0, scaleX: 1,
         })
         return
@@ -55,7 +57,6 @@ export default function Hero() {
 
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
 
-      // Dr. fades in quietly, then name scrambles
       tl.fromTo(drEl, { opacity: 0 }, { opacity: 1, duration: 0.5 })
         .fromTo(nameWords, { opacity: 0 }, { opacity: 1, duration: 0.01, stagger: 0.08 }, '-=0.1')
 
@@ -72,7 +73,8 @@ export default function Hero() {
       )
       .fromTo(roles, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.06 }, '-=0.2')
       .fromTo(thesis, { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, '-=0.1')
-      .fromTo(scrollCue, { opacity: 0 }, { opacity: 1, duration: 0.5 }, '+=0.4')
+      .fromTo(badges, { y: 12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.05 }, '-=0.3')
+      .fromTo(scrollCue, { opacity: 0 }, { opacity: 1, duration: 0.5 }, '+=0.3')
     },
     { scope: containerRef }
   )
@@ -93,22 +95,47 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
       aria-label="Hero"
     >
-      {/* Background grid */}
+      {/* Animated gradient orbs */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div
+          className="orb-1 absolute rounded-full"
+          style={{
+            width: 'clamp(400px, 60vw, 700px)',
+            height: 'clamp(400px, 60vw, 700px)',
+            background: 'radial-gradient(circle, rgba(200,169,110,0.09) 0%, transparent 68%)',
+            top: '-15%',
+            left: '-12%',
+          }}
+        />
+        <div
+          className="orb-2 absolute rounded-full"
+          style={{
+            width: 'clamp(300px, 50vw, 600px)',
+            height: 'clamp(300px, 50vw, 600px)',
+            background: 'radial-gradient(circle, rgba(200,169,110,0.06) 0%, transparent 68%)',
+            bottom: '-10%',
+            right: '-8%',
+          }}
+        />
+        <div
+          className="orb-3 absolute rounded-full"
+          style={{
+            width: 'clamp(200px, 30vw, 380px)',
+            height: 'clamp(200px, 30vw, 380px)',
+            background: 'radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 70%)',
+            top: '35%',
+            left: '55%',
+          }}
+        />
+      </div>
+
+      {/* Subtle grid */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px)',
+            'linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px)',
           backgroundSize: '80px 80px',
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Radial glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(255,255,255,0.025) 0%, transparent 70%)',
         }}
         aria-hidden="true"
       />
@@ -121,7 +148,6 @@ export default function Hero() {
           className="font-serif text-display text-fg mb-6 tracking-[0.12em] uppercase leading-none"
           style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '0.18em', flexWrap: 'wrap' }}
         >
-          {/* Dr. — inline, italic, smaller, muted */}
           <span
             className="hero-dr font-serif not-italic"
             style={{
@@ -139,7 +165,6 @@ export default function Hero() {
             Dr.
           </span>
 
-          {/* AQEEL JAFAR */}
           {NAME_WORDS.map((word, i) => (
             <span
               key={word}
@@ -161,7 +186,7 @@ export default function Hero() {
           aria-hidden="true"
         />
 
-        {/* Roles — single row desktop, clean wrap mobile */}
+        {/* Roles */}
         <div
           className="flex flex-wrap items-center justify-center mb-10"
           style={{ gap: '0 0' }}
@@ -185,12 +210,25 @@ export default function Hero() {
 
         {/* Thesis */}
         <p
-          className="hero-thesis font-serif italic text-h2 text-accent max-w-2xl mx-auto leading-relaxed"
+          className="hero-thesis font-serif italic text-h2 text-accent max-w-2xl mx-auto leading-relaxed mb-8"
           style={{ opacity: 0 }}
         >
           Where clinical medicine, artificial intelligence,
           entrepreneurship, and brand building converge.
         </p>
+
+        {/* Availability badges */}
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          {BADGES.map((badge) => (
+            <span
+              key={badge}
+              className="hero-badge font-mono text-[9px] uppercase tracking-[0.22em] text-muted border border-border px-3 py-1.5 hover:border-accent/40 hover:text-accent transition-colors duration-300"
+              style={{ opacity: 0 }}
+            >
+              {badge}
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* Scroll cue */}

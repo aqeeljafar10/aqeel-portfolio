@@ -38,7 +38,7 @@ const DEFAULT_TRACK: TrackItemData[] = [
     icon: 'Globe',
     geo: 'Medwizard Education · Travo Tours · Medventa Residences',
     description:
-      'A one-man operational backbone for the entire digital footprint of Medventure Holdings since the company\'s inception. Single-handedly built and managed all digital marketing, brand identity, social media, website architecture, graphic design, and creative direction across the group\'s portfolio — including Medwizard Education, Travo Tours, and Medventa Residences. The kind of role that doesn\'t have a title, because it covers everything.',
+      'Single-handedly built and managed the entire digital footprint of Medventure Holdings — brand identity, marketing, websites, and creative direction across Medwizard Education, Travo Tours, and Medventa Residences.',
   },
   {
     period: '2023 — Present',
@@ -47,7 +47,7 @@ const DEFAULT_TRACK: TrackItemData[] = [
     icon: 'Building2',
     geo: 'Georgia · Azerbaijan · Uzbekistan · Armenia',
     description:
-      'Co-founded and actively run a smart home hardware brand targeting the Caucasus and Central Asian markets. Responsible for overall business direction, cross-border operations, market expansion strategy, and legal entity management across four countries. Building the brand from the ground up in markets that most founders haven\'t considered.',
+      'Co-founded and actively run a smart home hardware brand targeting Caucasus and Central Asian markets. Responsible for business direction, cross-border operations, and legal entity management across four countries.',
   },
   {
     period: '2024 — Present',
@@ -56,7 +56,7 @@ const DEFAULT_TRACK: TrackItemData[] = [
     icon: 'Stethoscope',
     geo: 'Georgia',
     description:
-      'MBBS qualified. Practicing medicine in Georgia amidst ongoing ventures — maintaining direct clinical exposure not as a career endpoint, but as a live lens on the operational friction that motivates the infrastructure work. Emergency Department background; experience with high-volume triage and throughput.',
+      'MBBS qualified. Active clinical practice in Georgia — Emergency Department background with high-volume triage experience. Maintained alongside ventures as a live lens on operational friction.',
   },
 ]
 
@@ -140,6 +140,23 @@ export default function TrackRecord({ track: trackProp }: TrackRecordProps = {})
             className="track-item border-l border-border pl-8 pb-14 last:pb-0 group cursor-default relative"
             style={{ opacity: 0 }}
           >
+            {/* Timeline dot */}
+            <div
+              className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full border border-border bg-bg group-hover:border-accent group-hover:bg-accent/20 transition-all duration-300"
+              style={{
+                boxShadow: '0 0 0 0 rgba(200,169,110,0)',
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget as HTMLElement
+                el.style.boxShadow = '0 0 10px rgba(200,169,110,0.5)'
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget as HTMLElement
+                el.style.boxShadow = '0 0 0 0 rgba(200,169,110,0)'
+              }}
+              aria-hidden="true"
+            />
+
             {/* Period + icon */}
             <div className="flex items-center gap-2 mb-3">
               <item.iconComponent size={11} strokeWidth={1.5} className="text-muted flex-shrink-0" />

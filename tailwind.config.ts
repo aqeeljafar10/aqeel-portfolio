@@ -17,7 +17,7 @@ const config: Config = {
         fg: '#FFFFFF',
         muted: '#6B6B6B',
         subtle: '#1A1A1A',
-        accent: '#E5E5E5',
+        accent: '#C8A96E',
         border: '#2A2A2A',
       },
       fontSize: {

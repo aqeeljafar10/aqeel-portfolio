@@ -8,7 +8,8 @@ import { ArrowUpRight } from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const TALLY_FORM_URL = 'https://tally.so/r/your-form-id'
+// Update this to your real Tally form URL when ready: https://tally.so
+const CONTACT_URL = 'https://www.linkedin.com/in/aqeeljafar10/'
 
 export default function Engagement() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -57,7 +58,7 @@ export default function Engagement() {
   }
 
   const handleInquire = () => {
-    window.open(TALLY_FORM_URL, '_blank', 'noopener,noreferrer')
+    window.open(CONTACT_URL, '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -101,21 +102,24 @@ export default function Engagement() {
           on both sides.
         </p>
 
-        <div className="engage-cta" style={{ opacity: 0 }}>
+        <div className="engage-cta flex flex-col gap-4" style={{ opacity: 0 }}>
           <button
             ref={btnRef}
             onClick={handleInquire}
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={handleMouseLeave}
-            className="relative group inline-flex items-center gap-3 border border-fg/20 hover:border-fg px-8 py-4 font-mono text-xs uppercase tracking-[0.2em] text-fg overflow-hidden"
+            className="relative group inline-flex items-center gap-3 border border-accent/30 hover:border-accent px-8 py-4 font-mono text-xs uppercase tracking-[0.2em] text-fg overflow-hidden self-start"
             style={{ willChange: 'transform' }}
             aria-label="Open inquiry form"
           >
-            {/* Fill animation */}
+            {/* Gold fill animation */}
             <span
-              className="absolute inset-0 bg-fg transition-transform duration-400 ease-out origin-left"
-              style={{ transform: hovered ? 'scaleX(1)' : 'scaleX(0)' }}
+              className="absolute inset-0 transition-transform duration-400 ease-out origin-left"
+              style={{
+                transform: hovered ? 'scaleX(1)' : 'scaleX(0)',
+                background: 'var(--accent)',
+              }}
               aria-hidden="true"
             />
             <span className={`relative z-10 transition-colors duration-300 ${hovered ? 'text-bg' : 'text-fg'}`}>
@@ -128,6 +132,21 @@ export default function Engagement() {
               }`}
             />
           </button>
+
+          {/* LinkedIn secondary link */}
+          <a
+            href="https://www.linkedin.com/in/aqeeljafar10/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted hover:text-accent transition-colors duration-200 self-start"
+          >
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+            Connect on LinkedIn
+          </a>
         </div>
       </div>
     </section>

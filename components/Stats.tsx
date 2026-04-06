@@ -8,10 +8,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const STATS = [
-  { value: '6', label: 'Countries', sub: 'Active operations' },
-  { value: '5+', label: 'Ventures', sub: 'Across 5+ companies' },
-  { value: '2021', label: 'Since', sub: 'Entrepreneurial track record' },
-  { value: '∞', label: 'Domains', sub: 'Medicine · AI · Brand · Ops' },
+  { value: '6', label: 'Countries', sub: 'Active operations', numeric: 6, from: 0, suffix: '' },
+  { value: '5+', label: 'Ventures', sub: 'Across 5+ companies', numeric: 5, from: 0, suffix: '+' },
+  { value: '2021', label: 'Since', sub: 'Entrepreneurial track record', numeric: 2021, from: 2018, suffix: '' },
+  { value: '∞', label: 'Domains', sub: 'Medicine · AI · Brand · Ops', numeric: null, from: 0, suffix: '' },
 ]
 
 export default function Stats() {
@@ -22,7 +22,12 @@ export default function Stats() {
     if (!section) return
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const items = section.querySelectorAll('.stat-item')
-    if (reduced) { gsap.set(items, { opacity: 1, y: 0 }); return }
+    const valueEls = section.querySelectorAll<HTMLElement>('.stat-value')
+
+    if (reduced) {
+      gsap.set(items, { opacity: 1, y: 0 })
+      return
+    }
 
     gsap.fromTo(items,
       { opacity: 0, y: 30 },
@@ -31,6 +36,24 @@ export default function Stats() {
         scrollTrigger: { trigger: section, start: 'top 82%' },
       }
     )
+
+    // Count-up for each stat
+    STATS.forEach((stat, i) => {
+      if (stat.numeric === null) return
+      const el = valueEls[i]
+      if (!el) return
+      const obj = { val: stat.from }
+      gsap.to(obj, {
+        val: stat.numeric,
+        duration: 1.4,
+        ease: 'power2.out',
+        delay: i * 0.1,
+        onUpdate: () => {
+          el.textContent = Math.round(obj.val) + stat.suffix
+        },
+        scrollTrigger: { trigger: section, start: 'top 82%', once: true },
+      })
+    })
   }, { scope: sectionRef })
 
   return (
@@ -43,7 +66,7 @@ export default function Stats() {
             style={{ opacity: 0 }}
           >
             <span
-              className="font-serif text-[3rem] md:text-[3.5rem] leading-none text-fg group-hover:text-accent transition-colors duration-300"
+              className="stat-value font-serif text-[3rem] md:text-[3.5rem] leading-none text-fg group-hover:text-accent transition-colors duration-300"
             >
               {s.value}
             </span>

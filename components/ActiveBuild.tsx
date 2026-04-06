@@ -35,7 +35,7 @@ const DEFAULT_PROJECTS: ProjectData[] = [
     tag: 'Smart Home · Caucasus & Central Asia',
     title: 'Leading Meloc\'s Growth in Challenging Markets',
     description:
-      'Meloc is a smart lock and home automation brand built for markets that most founders haven\'t considered — the Caucasus and Central Asia. As Co-Founder and Managing Director, driving expansion strategy, market entry, partnership development, and operational scaling across Georgia, Azerbaijan, Uzbekistan, and Armenia. Building brand equity and distribution in emerging markets where trust, localisation, and on-the-ground presence are the actual competitive advantages.',
+      'Co-Founder & MD scaling Meloc — smart lock and home automation — across Georgia, Azerbaijan, Uzbekistan and Armenia. Building brand equity and distribution where trust and localisation are the actual competitive advantages.',
     status: 'Active',
     icon: 'TrendingUp',
   },
@@ -44,7 +44,7 @@ const DEFAULT_PROJECTS: ProjectData[] = [
     tag: 'Clinical AI · Workflow',
     title: 'AI in Clinical Practice',
     description:
-      'Exploring how large language models and structured AI pipelines can eliminate administrative overhead in clinical environments — giving clinicians back the time that systems currently consume. An ongoing area of study at the intersection of medicine and applied AI.',
+      'Researching how LLMs and AI pipelines eliminate administrative overhead in clinical environments — giving clinicians back the time that broken systems consume.',
     status: 'In progress',
     icon: 'Brain',
   },
@@ -53,7 +53,7 @@ const DEFAULT_PROJECTS: ProjectData[] = [
     tag: 'Mentorship · Advisory',
     title: 'Mentoring the Next Generation of Medical Entrepreneurs',
     description:
-      'Working with medical students, junior doctors, and early-stage health-tech founders who are navigating the intersection of medicine and entrepreneurship. The focus: cutting through noise, developing commercial instincts, and building identity alongside a clinical career.',
+      'Working with medical students, junior doctors, and early-stage health-tech founders navigating the intersection of medicine and entrepreneurship.',
     status: 'Active',
     icon: 'Users',
   },
@@ -62,7 +62,7 @@ const DEFAULT_PROJECTS: ProjectData[] = [
     tag: 'Brand · Identity',
     title: 'Healthcare Brand Architecture',
     description:
-      'Building recognised personal and company brands at the intersection of clinical authority and technology — establishing positioning that attracts the right operators, investors, and collaborators.',
+      'Building personal and company brands at the intersection of clinical authority and technology — attracting the right operators, investors, and collaborators.',
     status: 'Active',
     icon: 'Megaphone',
   },
@@ -71,7 +71,7 @@ const DEFAULT_PROJECTS: ProjectData[] = [
     tag: 'Medicine · Georgia',
     title: 'Practicing Medicine Amidst the Build',
     description:
-      'Maintaining active clinical practice in Georgia — not as a career endpoint, but as a live intelligence source. Ground-floor proximity to the operational realities that the rest of this work is designed to address.',
+      'Maintaining active clinical practice in Georgia as a live lens on operational friction — the source problem this entire body of work is designed to address.',
     status: 'Active',
     icon: 'Stethoscope',
   },
@@ -159,13 +159,13 @@ export default function ActiveBuild({ projects: projectsProp }: ActiveBuildProps
         {projects.map((project, i) => (
           <article
             key={project.index}
-            className="build-row group cursor-default"
+            className="build-row group cursor-default relative overflow-hidden"
             style={{ opacity: 0 }}
           >
             {/* Top rule */}
             <div className="w-full h-px bg-border mb-6" aria-hidden="true" />
 
-            <div className="grid grid-cols-[auto_1fr] md:grid-cols-[auto_1fr_auto] gap-x-8 gap-y-4 pb-10">
+            <div className="grid grid-cols-[auto_1fr] md:grid-cols-[auto_1fr_auto] gap-x-8 gap-y-4 pb-10 pl-4">
               {/* Index number */}
               <div className="font-serif text-[2.5rem] md:text-[3.5rem] leading-none text-border select-none group-hover:text-muted/30 transition-colors duration-500 self-start pt-1">
                 {project.index}

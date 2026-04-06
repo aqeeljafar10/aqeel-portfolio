@@ -26,7 +26,6 @@ export default function Thesis() {
         return
       }
 
-      // Tag
       gsap.fromTo(
         tag,
         { opacity: 0, y: 16 },
@@ -39,7 +38,6 @@ export default function Thesis() {
         }
       )
 
-      // Headline clip reveal
       gsap.fromTo(
         headLine,
         { clipPath: 'inset(100% 0 0 0)' },
@@ -51,7 +49,6 @@ export default function Thesis() {
         }
       )
 
-      // Body fade up
       gsap.fromTo(
         body,
         { opacity: 0, y: 40 },
@@ -95,26 +92,21 @@ export default function Thesis() {
         </h2>
       </div>
 
-      {/* Body */}
+      {/* Body — trimmed to 2 focused paragraphs */}
       <div
         className="thesis-body max-w-2xl space-y-5"
         style={{ opacity: 0 }}
       >
         <p className="font-mono text-sm text-accent leading-relaxed">
-          Clinical medicine suffers from structural friction — not from a shortage of talent or
-          technology, but from the absence of scalable infrastructure. Appointment systems that
-          don&apos;t talk to labs. Diagnostic centres with no standardisation. Administrative overhead
-          that consumes the clinician before they reach the patient.
-        </p>
-        <p className="font-mono text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
-          The solution is not another software wrapper. It is AI applied at the infrastructure
-          layer — automating the administrative layer, routing diagnostic data intelligently, and
-          building the operational rails that healthcare has never had.
+          Clinical medicine suffers from structural friction — not from a shortage of talent,
+          but from absent infrastructure. Appointment systems that don&apos;t talk to labs.
+          Diagnostic centres with no standardisation. Administrative overhead that consumes
+          the clinician before they reach the patient.
         </p>
         <p className="font-mono text-sm text-muted leading-relaxed">
-          This is the convergence point: where medicine becomes legible to machines, where brands
-          are built around clinical authority, and where entrepreneurship accelerates what research
-          alone cannot.
+          The solution is AI applied at the infrastructure layer — automating administration,
+          routing diagnostic data intelligently, and building the operational rails that
+          healthcare has never had.
         </p>
       </div>
     </section>
