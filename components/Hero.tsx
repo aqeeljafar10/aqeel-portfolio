@@ -92,7 +92,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-20 overflow-hidden"
       aria-label="Hero"
     >
       {/* Animated gradient orbs */}
