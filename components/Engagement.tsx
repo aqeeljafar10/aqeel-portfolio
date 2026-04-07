@@ -68,7 +68,7 @@ export default function Engagement() {
       className="section-pad px-6 max-w-5xl mx-auto"
       aria-label="Engagement"
     >
-      <div className="w-full h-px bg-border mb-16" aria-hidden="true" />
+      <div className="w-full h-px bg-border mb-8 md:mb-16" aria-hidden="true" />
 
       <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted mb-8 flex items-center gap-3">
         <span className="w-8 h-px bg-border" aria-hidden="true" />
@@ -89,17 +89,15 @@ export default function Engagement() {
           className="engage-sub font-mono text-sm text-muted leading-relaxed mb-4"
           style={{ opacity: 0 }}
         >
-          I allocate time to building high-leverage healthcare infrastructure and advising on
-          cross-border operational scale. Currently connecting with technical operators, AI
-          researchers, clinic networks, and brand builders in the health-tech space.
+          Connecting with technical operators, AI researchers, clinic networks, and health-tech founders.
+          Open to advisory, investment, and collaboration.
         </p>
 
         <p
-          className="engage-qualifier font-mono text-xs text-muted leading-relaxed mb-10 border-l border-border pl-4"
+          className="engage-qualifier font-mono text-xs text-muted leading-relaxed mb-8 md:mb-10 border-l border-border pl-4"
           style={{ opacity: 0 }}
         >
-          I ask three brief questions before connecting — this keeps conversations high-signal
-          on both sides.
+          Three brief questions to keep conversations high-signal on both sides.
         </p>
 
         <div className="engage-cta flex flex-col gap-4" style={{ opacity: 0 }}>

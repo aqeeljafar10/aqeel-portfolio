@@ -92,7 +92,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-20 overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-14 md:pt-24 overflow-hidden"
       aria-label="Hero"
     >
       {/* Animated gradient orbs */}
@@ -187,22 +187,14 @@ export default function Hero() {
         />
 
         {/* Roles */}
-        <div
-          className="flex flex-wrap items-center justify-center mb-10"
-          style={{ gap: '0 0' }}
-        >
+        <div className="flex flex-wrap items-center justify-center mb-8 gap-0">
           {ROLES.map((role, i) => (
             <span key={role} className="hero-role flex items-center" style={{ opacity: 0 }}>
-              <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted whitespace-nowrap px-3">
+              <span className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.18em] md:tracking-[0.22em] text-muted whitespace-nowrap px-2 md:px-3 py-0.5">
                 {role}
               </span>
               {i < ROLES.length - 1 && (
-                <span
-                  className="font-mono text-[10px] text-border select-none"
-                  aria-hidden="true"
-                >
-                  /
-                </span>
+                <span className="font-mono text-[10px] text-border select-none" aria-hidden="true">/</span>
               )}
             </span>
           ))}
@@ -210,19 +202,18 @@ export default function Hero() {
 
         {/* Thesis */}
         <p
-          className="hero-thesis font-serif italic text-h2 text-accent max-w-2xl mx-auto leading-relaxed mb-8"
+          className="hero-thesis font-serif italic text-[clamp(1rem,3.5vw,2rem)] text-accent max-w-xl mx-auto leading-snug mb-7 px-2 md:px-0"
           style={{ opacity: 0 }}
         >
-          Where clinical medicine, artificial intelligence,
-          entrepreneurship, and brand building converge.
+          Where medicine, AI &amp; entrepreneurship converge.
         </p>
 
         {/* Availability badges */}
-        <div className="flex flex-wrap items-center justify-center gap-2">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 md:gap-2">
           {BADGES.map((badge) => (
             <span
               key={badge}
-              className="hero-badge font-mono text-[9px] uppercase tracking-[0.22em] text-muted border border-border px-3 py-1.5 hover:border-accent/40 hover:text-accent transition-colors duration-300"
+              className="hero-badge font-mono text-[8px] md:text-[9px] uppercase tracking-[0.18em] md:tracking-[0.22em] text-muted border border-border px-2.5 py-1 md:px-3 md:py-1.5 hover:border-accent/40 hover:text-accent transition-colors duration-300"
               style={{ opacity: 0 }}
             >
               {badge}

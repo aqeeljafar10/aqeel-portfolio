@@ -49,8 +49,8 @@ export default async function Home() {
       <Marquee />
       <Stats />
       <Thesis />
-      <ActiveBuild projects={projects} />
-      <TrackRecord track={track} />
+      <ActiveBuild />
+      <TrackRecord />
       <Engagement />
       <Footer />
     </main>

@@ -36,9 +36,8 @@ const DEFAULT_TRACK: TrackItemData[] = [
     role: 'Digital Infrastructure & Brand Lead',
     org: 'Medventure Group',
     icon: 'Globe',
-    geo: 'Medwizard Education · Travo Tours · Medventa Residences',
-    description:
-      'Single-handedly built and managed the entire digital footprint of Medventure Holdings — brand identity, marketing, websites, and creative direction across Medwizard Education, Travo Tours, and Medventa Residences.',
+    geo: 'Education · Travel · Residences',
+    description: 'Built the entire digital footprint of Medventure Holdings — brand, marketing, and creative direction across three verticals.',
   },
   {
     period: '2023 — Present',
@@ -46,8 +45,7 @@ const DEFAULT_TRACK: TrackItemData[] = [
     org: 'Meloc',
     icon: 'Building2',
     geo: 'Georgia · Azerbaijan · Uzbekistan · Armenia',
-    description:
-      'Co-founded and actively run a smart home hardware brand targeting Caucasus and Central Asian markets. Responsible for business direction, cross-border operations, and legal entity management across four countries.',
+    description: 'Co-founded and run a smart home brand across 4 Caucasus/Central Asian markets — operations, entity management, and distribution.',
   },
   {
     period: '2024 — Present',
@@ -55,8 +53,7 @@ const DEFAULT_TRACK: TrackItemData[] = [
     org: 'Active Clinical Practice',
     icon: 'Stethoscope',
     geo: 'Georgia',
-    description:
-      'MBBS qualified. Active clinical practice in Georgia — Emergency Department background with high-volume triage experience. Maintained alongside ventures as a live lens on operational friction.',
+    description: 'MBBS. Emergency Department background. Maintained alongside all ventures as a live lens on operational friction.',
   },
 ]
 
@@ -122,7 +119,7 @@ export default function TrackRecord({ track: trackProp }: TrackRecordProps = {})
       aria-label="Operational History"
     >
       {/* Header */}
-      <div className="track-header mb-14" style={{ opacity: 0 }}>
+      <div className="track-header mb-8 md:mb-14" style={{ opacity: 0 }}>
         <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted mb-4 flex items-center gap-3">
           <span className="w-8 h-px bg-border" aria-hidden="true" />
           Proof of Execution
@@ -137,7 +134,7 @@ export default function TrackRecord({ track: trackProp }: TrackRecordProps = {})
         {track.map((item) => (
           <article
             key={item.org}
-            className="track-item border-l border-border pl-8 pb-14 last:pb-0 group cursor-default relative"
+            className="track-item border-l border-border pl-5 md:pl-8 pb-8 md:pb-14 last:pb-0 group cursor-default relative"
             style={{ opacity: 0 }}
           >
             {/* Timeline dot */}
@@ -158,34 +155,34 @@ export default function TrackRecord({ track: trackProp }: TrackRecordProps = {})
             />
 
             {/* Period + icon */}
-            <div className="flex items-center gap-2 mb-3">
-              <item.iconComponent size={11} strokeWidth={1.5} className="text-muted flex-shrink-0" />
-              <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted">
+            <div className="flex items-center gap-2 mb-2 md:mb-3">
+              <item.iconComponent size={10} strokeWidth={1.5} className="text-accent flex-shrink-0" />
+              <span className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.22em] text-muted">
                 {item.period}
               </span>
             </div>
 
             {/* Role + Org */}
             <div className="mb-1">
-              <h3 className="font-serif text-h2 text-fg group-hover:text-accent transition-colors duration-300">
+              <h3 className="font-serif text-[clamp(1.1rem,3.5vw,2rem)] text-fg group-hover:text-accent transition-colors duration-300 leading-snug">
                 {item.role}
               </h3>
             </div>
 
             {/* Org + Geo */}
-            <div className="flex flex-col gap-0.5 mb-4">
-              <span className="font-mono text-xs text-accent tracking-wide">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 mb-3">
+              <span className="font-mono text-[11px] md:text-xs text-accent tracking-wide">
                 {item.org}
               </span>
               {item.geo && (
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
-                  {item.geo}
+                <span className="font-mono text-[9px] uppercase tracking-[0.15em] text-muted">
+                  · {item.geo}
                 </span>
               )}
             </div>
 
             {/* Description */}
-            <p className="font-mono text-xs text-muted leading-relaxed max-w-2xl">
+            <p className="font-mono text-[11px] md:text-xs text-muted leading-relaxed max-w-2xl">
               {item.description}
             </p>
           </article>

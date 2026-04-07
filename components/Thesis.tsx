@@ -74,7 +74,7 @@ export default function Thesis() {
     >
       {/* Tag */}
       <div
-        className="thesis-tag font-mono text-[10px] uppercase tracking-[0.3em] text-muted mb-8 flex items-center gap-3"
+        className="thesis-tag font-mono text-[10px] uppercase tracking-[0.3em] text-muted mb-4 md:mb-8 flex items-center gap-3"
         style={{ opacity: 0 }}
       >
         <span className="w-8 h-px bg-border" aria-hidden="true" />
@@ -82,7 +82,7 @@ export default function Thesis() {
       </div>
 
       {/* Headline */}
-      <div className="overflow-hidden mb-12">
+      <div className="overflow-hidden mb-6 md:mb-12">
         <h2
           className="thesis-headline font-serif text-h1 text-fg leading-tight"
           style={{ clipPath: 'inset(100% 0 0 0)' }}
@@ -100,14 +100,11 @@ export default function Thesis() {
       >
         <p className="font-mono text-sm text-accent leading-relaxed">
           Clinical medicine suffers from structural friction — not from a shortage of talent,
-          but from absent infrastructure. Appointment systems that don&apos;t talk to labs.
-          Diagnostic centres with no standardisation. Administrative overhead that consumes
-          the clinician before they reach the patient.
+          but from absent infrastructure. Admin overhead consumes the clinician before they reach the patient.
         </p>
         <p className="font-mono text-sm text-muted leading-relaxed">
-          The solution is AI applied at the infrastructure layer — automating administration,
-          routing diagnostic data intelligently, and building the operational rails that
-          healthcare has never had.
+          The fix is AI at the infrastructure layer — automating admin, routing diagnostic data intelligently,
+          and building the operational rails healthcare has never had.
         </p>
       </div>
     </section>

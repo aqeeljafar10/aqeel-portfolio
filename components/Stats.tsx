@@ -57,16 +57,16 @@ export default function Stats() {
   }, { scope: sectionRef })
 
   return (
-    <section ref={sectionRef} className="px-6 max-w-5xl mx-auto py-16" aria-label="Stats">
+    <section ref={sectionRef} className="px-6 max-w-5xl mx-auto py-8 md:py-16" aria-label="Stats">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border">
         {STATS.map((s) => (
           <div
             key={s.label}
-            className="stat-item bg-bg px-8 py-10 flex flex-col gap-2 group hover:bg-subtle transition-colors duration-300"
+            className="stat-item bg-bg px-4 py-6 md:px-8 md:py-10 flex flex-col gap-1.5 group hover:bg-subtle transition-colors duration-300"
             style={{ opacity: 0 }}
           >
             <span
-              className="stat-value font-serif text-[3rem] md:text-[3.5rem] leading-none text-fg group-hover:text-accent transition-colors duration-300"
+              className="stat-value font-serif text-[2.4rem] md:text-[3.5rem] leading-none text-fg group-hover:text-accent transition-colors duration-300"
             >
               {s.value}
             </span>

@@ -33,9 +33,8 @@ const DEFAULT_PROJECTS: ProjectData[] = [
   {
     index: '01',
     tag: 'Smart Home · Caucasus & Central Asia',
-    title: 'Leading Meloc\'s Growth in Challenging Markets',
-    description:
-      'Co-Founder & MD scaling Meloc — smart lock and home automation — across Georgia, Azerbaijan, Uzbekistan and Armenia. Building brand equity and distribution where trust and localisation are the actual competitive advantages.',
+    title: 'Scaling Meloc Across New Markets',
+    description: 'Co-Founder scaling Meloc smart home automation across Georgia, Azerbaijan, Uzbekistan & Armenia.',
     status: 'Active',
     icon: 'TrendingUp',
   },
@@ -43,17 +42,15 @@ const DEFAULT_PROJECTS: ProjectData[] = [
     index: '02',
     tag: 'Clinical AI · Workflow',
     title: 'AI in Clinical Practice',
-    description:
-      'Researching how LLMs and AI pipelines eliminate administrative overhead in clinical environments — giving clinicians back the time that broken systems consume.',
+    description: 'Researching how AI pipelines eliminate admin overhead in clinical environments — giving clinicians time back.',
     status: 'In progress',
     icon: 'Brain',
   },
   {
     index: '03',
     tag: 'Mentorship · Advisory',
-    title: 'Mentoring the Next Generation of Medical Entrepreneurs',
-    description:
-      'Working with medical students, junior doctors, and early-stage health-tech founders navigating the intersection of medicine and entrepreneurship.',
+    title: 'Mentoring Medical Entrepreneurs',
+    description: 'Guiding medical students, junior doctors, and early health-tech founders through medicine and entrepreneurship.',
     status: 'Active',
     icon: 'Users',
   },
@@ -61,17 +58,15 @@ const DEFAULT_PROJECTS: ProjectData[] = [
     index: '04',
     tag: 'Brand · Identity',
     title: 'Healthcare Brand Architecture',
-    description:
-      'Building personal and company brands at the intersection of clinical authority and technology — attracting the right operators, investors, and collaborators.',
+    description: 'Building clinical authority brands that attract the right operators, investors, and collaborators.',
     status: 'Active',
     icon: 'Megaphone',
   },
   {
     index: '05',
     tag: 'Medicine · Georgia',
-    title: 'Practicing Medicine Amidst the Build',
-    description:
-      'Maintaining active clinical practice in Georgia as a live lens on operational friction — the source problem this entire body of work is designed to address.',
+    title: 'Active Clinical Practice',
+    description: 'Maintaining clinical practice in Georgia — a live lens on the operational friction this work addresses.',
     status: 'Active',
     icon: 'Stethoscope',
   },
@@ -144,7 +139,7 @@ export default function ActiveBuild({ projects: projectsProp }: ActiveBuildProps
       aria-label="Active Architecture"
     >
       {/* Header */}
-      <div className="build-header mb-16" style={{ opacity: 0 }}>
+      <div className="build-header mb-8 md:mb-16" style={{ opacity: 0 }}>
         <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted mb-4 flex items-center gap-3">
           <span className="w-8 h-px bg-border" aria-hidden="true" />
           Current Focus
@@ -165,29 +160,42 @@ export default function ActiveBuild({ projects: projectsProp }: ActiveBuildProps
             {/* Top rule */}
             <div className="w-full h-px bg-border mb-6" aria-hidden="true" />
 
-            <div className="grid grid-cols-[auto_1fr] md:grid-cols-[auto_1fr_auto] gap-x-8 gap-y-4 pb-10 pl-4">
+            <div className="grid grid-cols-[auto_1fr] md:grid-cols-[auto_1fr_auto] gap-x-4 md:gap-x-8 gap-y-3 pb-6 md:pb-10 pl-3 md:pl-4">
               {/* Index number */}
-              <div className="font-serif text-[2.5rem] md:text-[3.5rem] leading-none text-border select-none group-hover:text-muted/30 transition-colors duration-500 self-start pt-1">
+              <div className="font-serif text-[1.8rem] md:text-[3.5rem] leading-none text-border select-none group-hover:text-muted/30 transition-colors duration-500 self-start pt-1">
                 {project.index}
               </div>
 
               {/* Main content */}
-              <div className="flex flex-col gap-3">
-                {/* Tag + icon */}
-                <div className="flex items-center gap-2">
-                  <project.iconComponent size={11} strokeWidth={1.5} className="text-muted flex-shrink-0" />
-                  <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted">
-                    {project.tag}
+              <div className="flex flex-col gap-2 md:gap-3">
+                {/* Tag + icon + status pill (mobile) */}
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-1.5">
+                    <project.iconComponent size={10} strokeWidth={1.5} className="text-accent flex-shrink-0" />
+                    <span className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.25em] md:tracking-[0.3em] text-muted">
+                      {project.tag}
+                    </span>
+                  </div>
+                  {/* Status — mobile visible */}
+                  <span className="md:hidden flex items-center gap-1.5 flex-shrink-0">
+                    <span
+                      className="w-1.5 h-1.5 rounded-full"
+                      style={{ backgroundColor: STATUS_COLORS[project.status] }}
+                      aria-hidden="true"
+                    />
+                    <span className="font-mono text-[8px] uppercase tracking-[0.15em] text-muted">
+                      {project.status}
+                    </span>
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="font-serif text-h2 text-fg group-hover:text-accent transition-colors duration-300 leading-snug">
+                <h3 className="font-serif text-[clamp(1.1rem,3.5vw,2rem)] text-fg group-hover:text-accent transition-colors duration-300 leading-snug">
                   {project.title}
                 </h3>
 
                 {/* Description */}
-                <p className="font-mono text-xs text-muted leading-relaxed max-w-2xl">
+                <p className="font-mono text-[11px] md:text-xs text-muted leading-relaxed max-w-2xl">
                   {project.description}
                 </p>
               </div>

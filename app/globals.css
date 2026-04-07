@@ -71,8 +71,8 @@ body {
 
 /* ─── Section Spacing ────────────────────────────────────────────────── */
 .section-pad {
-  padding-top: clamp(5rem, 12vw, 10rem);
-  padding-bottom: clamp(5rem, 12vw, 10rem);
+  padding-top: clamp(3rem, 10vw, 10rem);
+  padding-bottom: clamp(3rem, 10vw, 10rem);
 }
 
 /* ─── Divider Animation ──────────────────────────────────────────────── */
