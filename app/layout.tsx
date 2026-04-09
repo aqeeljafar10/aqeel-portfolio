@@ -18,28 +18,60 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Aqeel Jafar — Physician. AI Pioneer. Founder. Operator.',
+  title: 'Dr. Aqeel Jafar — Physician, AI Pioneer & Venture Architect',
   description:
-    'AI pioneer and physician-founder building at the convergence of healthcare, artificial intelligence, entrepreneurship, and brand — from clinical informatics to asset-light diagnostic infrastructure.',
+    'Dr. Aqeel Jafar is a physician, AI pioneer, and venture architect building at the convergence of healthcare, artificial intelligence, and entrepreneurship. Co-founder of Meloc. Based in Georgia.',
   metadataBase: new URL('https://aqeeljafar.com'),
+  keywords: [
+    'Aqeel Jafar',
+    'Dr Aqeel Jafar',
+    'physician founder',
+    'healthcare AI',
+    'medical entrepreneur',
+    'AI pioneer healthcare',
+    'Meloc',
+    'Medventure Group',
+    'clinical AI',
+    'health tech founder',
+    'Georgia physician',
+    'venture architect',
+  ],
+  alternates: {
+    canonical: 'https://aqeeljafar.com',
+  },
   openGraph: {
-    title: 'Aqeel Jafar — Physician. AI Pioneer. Founder. Operator.',
+    title: 'Dr. Aqeel Jafar — Physician, AI Pioneer & Venture Architect',
     description:
-      'Building where clinical medicine, artificial intelligence, entrepreneurship, and brand converge.',
+      'Physician-founder building where clinical medicine, artificial intelligence, and entrepreneurship converge. Co-founder of Meloc. Open to advisory, investment, and collaboration.',
     url: 'https://aqeeljafar.com',
     siteName: 'Aqeel Jafar',
     locale: 'en_US',
-    type: 'website',
+    type: 'profile',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Dr. Aqeel Jafar — Physician, AI Pioneer & Venture Architect',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aqeel Jafar — Physician. AI Pioneer. Founder. Operator.',
+    title: 'Dr. Aqeel Jafar — Physician, AI Pioneer & Venture Architect',
     description:
-      'Building where clinical medicine, artificial intelligence, entrepreneurship, and brand converge.',
+      'Physician-founder building where clinical medicine, AI, and entrepreneurship converge.',
+    images: ['/opengraph-image'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 
@@ -47,16 +79,38 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Aqeel Jafar',
-  jobTitle: 'Physician, AI Pioneer & Founder',
+  honorificPrefix: 'Dr.',
+  jobTitle: 'Physician, AI Pioneer & Venture Architect',
   description:
-    'AI pioneer and physician-founder building at the convergence of healthcare, artificial intelligence, entrepreneurship, and brand building.',
+    'Dr. Aqeel Jafar is a physician-founder building at the convergence of healthcare, artificial intelligence, and entrepreneurship — from clinical AI workflow research to cross-border smart home ventures.',
   url: 'https://aqeeljafar.com',
+  email: 'aqeel@melocsmart.ge',
+  image: 'https://aqeeljafar.com/opengraph-image',
+  sameAs: [
+    'https://www.linkedin.com/in/aqeeljafar10/',
+  ],
+  worksFor: [
+    {
+      '@type': 'Organization',
+      name: 'Meloc',
+      url: 'https://melocsmart.ge',
+      description: 'Smart home automation brand operating across Georgia, Azerbaijan, Uzbekistan, and Armenia.',
+    },
+    {
+      '@type': 'Organization',
+      name: 'Medventure Group',
+      description: 'Healthcare and education holding company — Medwizard Education, Travo Tours, Medventa Residences.',
+    },
+  ],
   knowsAbout: [
     'Healthcare AI',
     'Clinical Informatics',
-    'Diagnostic Infrastructure',
-    'Healthcare Entrepreneurship',
+    'Medical Entrepreneurship',
+    'Healthcare Infrastructure',
     'Cross-border Operations',
+    'Smart Home Technology',
+    'Brand Architecture',
+    'Venture Building',
   ],
   hasOccupation: [
     {
@@ -66,15 +120,17 @@ const jsonLd = {
     },
     {
       '@type': 'Occupation',
-      name: 'Managing Director',
+      name: 'Co-Founder & Managing Director',
       worksFor: { '@type': 'Organization', name: 'Meloc' },
     },
     {
       '@type': 'Occupation',
-      name: 'Operator',
+      name: 'Digital Infrastructure & Brand Lead',
       worksFor: { '@type': 'Organization', name: 'Medventure Group' },
     },
   ],
+  nationality: { '@type': 'Country', name: 'Pakistan' },
+  homeLocation: { '@type': 'Place', name: 'Georgia' },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
