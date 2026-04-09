@@ -9,7 +9,7 @@ import { ArrowUpRight } from 'lucide-react'
 gsap.registerPlugin(ScrollTrigger)
 
 // Update this to your real Tally form URL when ready: https://tally.so
-const CONTACT_URL = 'https://www.linkedin.com/in/aqeeljafar10/'
+const CONTACT_URL = 'mailto:aqeel@melocsmart.ge?subject=Inquiry%20via%20aqeeljafar.com'
 
 export default function Engagement() {
   const sectionRef = useRef<HTMLElement>(null)
